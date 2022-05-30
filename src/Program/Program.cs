@@ -19,8 +19,10 @@ namespace ConsoleApplication
         /// </summary>
         public static void Main()
         {
-
-            Console.WriteLine("Hello World!");
+            ImpresoraConsola impresora = new ImpresoraConsola();
+            Tablero tablero = new Tablero(5,5);
+            impresora.ImprimirTablero(tablero.VerTablero(3));
+            
         }
     }
 }

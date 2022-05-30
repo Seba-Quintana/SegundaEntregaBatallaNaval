@@ -11,7 +11,7 @@ namespace ClassLibrary
         /// Imprime el tablero en consola agregandole indices de coordenadas
         /// </summary>
         /// <param name="tablero"></param>
-        void ImprimirTablero(char[,] tablero)
+        public void ImprimirTablero(char[,] tablero)
         {
             string filaImprimir = "  ";
             string letras = "ABCDEFGHIJKLMNO";
