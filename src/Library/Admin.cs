@@ -8,8 +8,8 @@ namespace ClassLibrary
     
         public void Registrar(string nombre, int id, string contraseña)
         {
-            PerfilUsuario perfilusuario = new PerfilUsuario (nombre,id,contraseña);
-            ListaDeUsuarios.Add(perfilusuario);
+            //PerfilUsuario perfilusuario = new PerfilUsuario (nombre,id,contraseña);
+            //ListaDeUsuarios.Add(perfilusuario);
 
         }
         public void Remover(int NumeroDeJugador)
@@ -24,32 +24,38 @@ namespace ClassLibrary
         }
         void ObtenerPerfil(int NumeroDePerfil)
         {
-            Iimpresora.ImprimirPerfilUsuario(NumeroDePerfil);
+            //Iimpresora.ImprimirPerfilUsuario(NumeroDePerfil);
         }
         
         void ObtenerTableroAtaque(string[] tableroOponente)
         {
-            Iimpresora.ImprimirTableroOponente(tableroOponente);
+            //Iimpresora.ImprimirTableroOponente(tableroOponente);
         }
 
         void ObtenerTableroDefensa(string[] tablero)
         {
-            Iimpresora.ImprimirTablero(tablero);
+            //Iimpresora.ImprimirTablero(tablero);
         }
     
         void ObtenerHistorial()
         {
-            Iimpresora.ImprimirHistorial();
+            //Iimpresora.ImprimirHistorial();
         }
     
         void ObtenerRanking()
         {
-            Iimpresora.ImprimirRanking();
+            //Iimpresora.ImprimirRanking();
         }
     
-        public void ActualizarHistorial(DatosdePartidas partida)
+        public void ActualizarHistorial(DatosdePartida partida)
         {
-            Historial.AlmacenarPartida(partida);
+            foreach (PerfilUsuario usuario in ListaDeUsuarios)
+            {
+                if (partida.Ganador == usuario.NumeroDeJugador || partida.Perdedor == usuario.NumeroDeJugador)
+                {
+                    //PerfilUsuario.AñadiralHistorial(partida);
+                }
+            }
         }
     
         public void CrearTablero(int Tamaño, int dueño)
@@ -59,7 +65,7 @@ namespace ClassLibrary
         
         public void ActualizarTablero(int filas, int columnas, char nuevovalor)
         {
-            Tablero.ActualizarTablero(filas, columnas, nuevovalor);
+            //Tablero.ActualizarTablero(filas, columnas, nuevovalor);
         }
     }
 }
