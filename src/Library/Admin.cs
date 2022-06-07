@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 namespace ClassLibrary
 {
-    public class Admin
+    /*public class Admin
     {
         public static List<PerfilUsuario> ListaDeUsuarios;
     
@@ -73,5 +73,5 @@ namespace ClassLibrary
         {
             //Tablero.ActualizarTablero(filas, columnas, nuevovalor);
         }
-    }
+    }*/
 }

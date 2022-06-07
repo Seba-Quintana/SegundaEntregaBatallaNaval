@@ -7,7 +7,7 @@ namespace ClassLibrary
     /// Esta clase empareja a dos jugadores en una lista.
     /// Hay dos colas existentes, una para el modo normal y otra para el modo rapido
     /// </summary>
-    public static class Emparejamiento
+    /*public static class Emparejamiento
     {
         /// <summary>
         /// Lista de emparejamiento (modo normal)
@@ -90,5 +90,5 @@ namespace ClassLibrary
             }
             return listaAmigos;
         }
-    }
+    }*/
 }

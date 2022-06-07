@@ -7,7 +7,7 @@ namespace ClassLibrary
     /// Esta clase empareja a dos jugadores en una lista.
     /// Hay dos colas existentes, una para el modo normal y otra para el modo rapido
     /// </summary>
-    public class PerfilUsuario
+    /*public class PerfilUsuario
     {
         /// <summary>
         /// Nombre del jugador
@@ -32,22 +32,22 @@ namespace ClassLibrary
         /// <summary>
         /// Numero de jugador del oponente actual (0 si no hay oponente)
         /// </summary>
-        public int OponenteEnPartida;
+        //public int OponenteEnPartida;
 
         /// <summary>
         /// Cantidad de partidas ganadas
         /// </summary>
-        public int Ganadas;
+        //public int Ganadas;
 
         /// <summary>
         /// Cantidad de partidas perdidas
         /// </summary>
-        public int Perdidas;
+        //public int Perdidas;
       
         /// <summary>
         /// historial del usuario en concreto
         /// </summary>
-        public List<DatosdePartidas> HistorialPersonal;
+        //public List<DatosdePartidas> HistorialPersonal;
 
         /// <summary>
         /// constructor del perfil de usuario.
@@ -60,7 +60,7 @@ namespace ClassLibrary
         /// <param name="Ganadas"></param>
         /// <param name="Perdidas"></param>
         /// <param name="HistorialPersonal"></param>
-        public PerfilUsuario (string Nombre, int ID, string Contraseña, int NumeroDeJugador, 
+        /*public PerfilUsuario (string Nombre, int ID, string Contraseña, int NumeroDeJugador, 
                             int OponenteEnPartida, int Ganadas,
                             int Perdidas, List<DatosdePartidas> HistorialPersonal)
         {
@@ -87,7 +87,7 @@ namespace ClassLibrary
         /// </summary>
         /// <returns></returns>
       
-        public PerfilUsuario VerPerfil()
+        /*public PerfilUsuario VerPerfil()
         {
             return this;
         }
@@ -101,5 +101,5 @@ namespace ClassLibrary
         {
             return this.HistorialPersonal;
         }
-    }
+    }*/
 }

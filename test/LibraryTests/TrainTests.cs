@@ -5,11 +5,11 @@
 //--------------------------------------------------------------------------------
 
 using ClassLibrary;
-/*using NUnit.Framework;
+using NUnit.Framework;
 
 namespace Tests
 {
-    /// <summary>
+    /*/// <summary>
     /// Prueba de la clase <see cref="Train"/>.
     /// </summary>
     /*[TestFixture]
