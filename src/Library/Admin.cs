@@ -22,9 +22,15 @@ namespace ClassLibrary
                 }
             }
         }
-        void ObtenerPerfil(int NumeroDePerfil)
+        public static PerfilUsuario ObtenerPerfil(int usuario)
         {
-            //Iimpresora.ImprimirPerfilUsuario(NumeroDePerfil);
+            int i = 0;
+            while (i != ListaDeUsuarios.Count - 1)
+            {
+                if (ListaDeUsuarios[i].NumeroDeJugador == usuario)
+                    return ListaDeUsuarios[i];
+            }
+            return null;
         }
         
         void ObtenerTableroAtaque(string[] tableroOponente)
