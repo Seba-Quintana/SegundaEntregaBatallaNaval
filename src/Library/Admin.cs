@@ -46,7 +46,7 @@ namespace ClassLibrary
             //Iimpresora.ImprimirTablero(tablero);
         }
 
-        void ObtenerHistorial(int numerodejugador)
+        public void ObtenerHistorial(int numerodejugador)
         {
             ImpresoraConsola imprimir = ImpresoraConsola.Instance();
             try

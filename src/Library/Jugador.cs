@@ -13,42 +13,85 @@ namespace ClassLibrary
       
       public void VerPerfil(int perfil)
       {
-         Admin ad = new Admin();
-         ad.ObtenerPerfil(perfil);
+         //Admin ad = Admin.Instance();
+         try
+         {
+            //ad.ObtenerPerfil(perfil);
+         }
+        catch
+        {
+          Console.WriteLine("No existe un perfil con ese Número de jugador.");
+        }
       }  
     
       public void VerRanking()
       {
-         Admin ad = new Admin();
-         ad.ObtenerRanking();
-      }
+         //Admin ad = Admin.Instance();
+         try
+         {
+            //ad.ObtenerRanking();
+         }      
+        catch
+        {
+          Console.WriteLine("No existe un Ranking.");
+        }
+      } 
     
       public void VerHistorial(int historial)
       {
-          Admin ad = new Admin();
-          //ad.ObtenerHistorial(historial);
+          //Admin ad = Admin.Instance();
+          try
+          {
+            //ad.ObtenerHistorial(historial);
+          }
+          catch
+          {
+            Console.WriteLine("No hay nada registrado dentro del Historial");
+          }
       }
     
       public void PartidaAmistosa(int modo, int jugador1, int jugador2)
       {
-        Admin ad = new Admin();
-        ad.EmparejarAmigos(modo, jugador1, jugador2);
-
+        //Admin ad = Admin.Instance();
+        try
+        {
+          //ad.EmparejarAmigos(modo, jugador1, jugador2);
+        }
+        catch
+        {
+          Console.WriteLine("Uno de los jugadores no se encuentran en la partida");
+        }
       }
     
       public void BuscarPartida(int modo, int jugador1)
       {
 
-        Admin ad = new Admin();
-        ad.Emparejar(modo, jugador1);
+        //Admin ad = Admin.Instance();
+        try
+        {
+         //ad.Emparejar(modo, jugador1);
+        }
+        catch
+        {
+          Console.WriteLine("No se pudo encontrar una partida");
+        }
+      
       }
       /// <summary>
       /// 
       /// </summary>
       public void VisualizarTablero()
       {
-        //Admin.ObtenerTableroOponente();
-        //Admin.ObtenerTablero();
+        //Admin ad = Admin.Instance();
+        try
+        {
+        //ad.ObtenerTableroOponente();
+        //ad.ObtenerTablero();
+        }
+        catch
+        {
+          Console.WriteLine("El tablero no se puede visualizar o no existe");
+        }
       }
       /// <summary>
       /// 
@@ -56,8 +99,15 @@ namespace ClassLibrary
       /// <param name="inicio"></param>
       /// <param name="final"></param>
       public void PosicionarBarcos(string inicio, string final)
-      {
+      { 
+        try
+        {
         //LogicaDePartida.añadirBarco(TraductorDeCoordenadas.Traducir(inicio),TraductorDeCoordenadas.Traducir(final));
+        }
+        catch
+        {
+          Console.WriteLine("No se puede posicionar el barco, pruebe otro barco o posición.");
+        }
       }
       /// <summary>
       /// 
@@ -65,7 +115,14 @@ namespace ClassLibrary
       /// <param name="coordenada"></param>
       public void Atacar(string coordenada)
       {
-//LogicaDePartida.Atacar(TraductorDeCoordenadas.Traducir(coordenada));
+        try
+        {
+          //LogicaDePartida.Atacar(TraductorDeCoordenadas.Traducir(coordenada));
+        }
+        catch
+        {
+          Console.WriteLine("No se puede atacar a ese barco, lo has golpeado anteriormente");
+        }
       }
     }
     
