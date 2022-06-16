@@ -69,50 +69,44 @@ namespace ClassLibrary
         */
             try
             {
-                
+                if (!ColaEmparejamientosN.Contains(usuario) && !ColaEmparejamientosR.Contains(usuario))
+                    throw new IndexOutOfRangeException();
             }
             catch (IndexOutOfRangeException index)
             {
                 throw new ArgumentOutOfRangeException("indice de cola se va de rango", index);
             }
-            try
-            {    
-                if (ColaEmparejamientosN.Contains(usuario))
+            if (ColaEmparejamientosN.Contains(usuario))
+            {
+                int largoCola = ColaEmparejamientosN.Count;
+                int i = 0;
+                while (i < largoCola - 1)
                 {
-                    int largoCola = ColaEmparejamientosN.Count;
-                    int i = 0;
-                    while (i < largoCola - 1)
+                    if (ColaEmparejamientosN.Peek() == usuario)
+                        ColaEmparejamientosN.Dequeue();
+                    else
                     {
-                        if (ColaEmparejamientosN.Peek() == usuario)
-                            ColaEmparejamientosN.Dequeue();
-                        else
-                        {
-                            ColaEmparejamientosN.Enqueue(ColaEmparejamientosN.Peek());
-                            ColaEmparejamientosN.Dequeue();
-                            i++;
-                        }
-                    }
-                }
-                else if (ColaEmparejamientosR.Contains(usuario))
-                {
-                    int largoCola = ColaEmparejamientosR.Count;
-                    int i = 0;
-                    while (i < largoCola - 1)
-                    {
-                        if (ColaEmparejamientosR.Peek() == usuario)
-                            ColaEmparejamientosR.Dequeue();
-                        else
-                        {
-                            ColaEmparejamientosR.Enqueue(ColaEmparejamientosR.Peek());
-                            ColaEmparejamientosR.Dequeue();
-                            i++;
-                        }
+                        ColaEmparejamientosN.Enqueue(ColaEmparejamientosN.Peek());
+                        ColaEmparejamientosN.Dequeue();
+                        i++;
                     }
                 }
             }
-            catch(Exception b)
+            else if (ColaEmparejamientosR.Contains(usuario))
             {
-                throw new Exception("indice de cola se va de rango", b);
+                int largoCola = ColaEmparejamientosR.Count;
+                int i = 0;
+                while (i < largoCola - 1)
+                {
+                    if (ColaEmparejamientosR.Peek() == usuario)
+                        ColaEmparejamientosR.Dequeue();
+                    else
+                    {
+                        ColaEmparejamientosR.Enqueue(ColaEmparejamientosR.Peek());
+                        ColaEmparejamientosR.Dequeue();
+                        i++;
+                    }
+                }
             }
         }
 
