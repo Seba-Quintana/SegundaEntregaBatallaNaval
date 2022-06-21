@@ -8,7 +8,7 @@ public class TableroInvalidoException : System.Exception
     /// <summary>
     /// Tablero invalido
     /// </summary>
-    public int Tablero { get; }
+    public int Tamaño { get; }
 
     /// <summary>
     /// Constructor default
@@ -37,8 +37,8 @@ public class TableroInvalidoException : System.Exception
     /// <param name="message"> mensaje a mostrar </param>
     /// <param name="tablero"> numero del jugador no encontrado </param>
     /// <returns></returns>
-    public TableroInvalidoException(string message, int tablero) : this(message)
+    public TableroInvalidoException(string message, int tamaño) : this(message)
     {
-        Tablero = tablero;
+        Tamaño = tamaño;
     }
 }
