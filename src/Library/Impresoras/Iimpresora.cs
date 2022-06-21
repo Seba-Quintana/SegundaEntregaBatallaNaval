@@ -43,5 +43,11 @@ namespace ClassLibrary
         /// </summary>
         /// <param name="perfiles"></param>
         public void ImprimirRanking(List<PerfilUsuario> perfiles);
+
+        /// <summary>
+        /// Esta operacion se encarga de imprimir un mensaje recibido
+        /// </summary>
+        /// <param name="mensaje"> mensaje a imprimir </param>
+        public void RecibirMensajes(string mensaje);
     }
 }

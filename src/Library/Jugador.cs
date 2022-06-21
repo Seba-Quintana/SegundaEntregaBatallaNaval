@@ -32,7 +32,7 @@ namespace ClassLibrary
         }
         catch (Exception)
         {
-          ImpresoraConsola impresora = ImpresoraConsola.Instance();
+          Iimpresora impresora = ImpresoraConsola.Instance();
           impresora.RecibirMensajes("no se pudo crear un jugador");
         }
       }
@@ -64,7 +64,7 @@ namespace ClassLibrary
         }
         catch (Exception)
         {
-          ImpresoraConsola impresora = ImpresoraConsola.Instance();
+          Iimpresora impresora = ImpresoraConsola.Instance();
           impresora.RecibirMensajes("no se pudo ver el perfil del jugador");
         }
       }
@@ -80,7 +80,7 @@ namespace ClassLibrary
         }
         catch (Exception)
         {
-          ImpresoraConsola impresora = ImpresoraConsola.Instance();
+          Iimpresora impresora = ImpresoraConsola.Instance();
           impresora.RecibirMensajes("no se pudo ver el ranking");
         }
       }
@@ -96,7 +96,7 @@ namespace ClassLibrary
         }
         catch (Exception)
         {
-          ImpresoraConsola impresora = ImpresoraConsola.Instance();
+          Iimpresora impresora = ImpresoraConsola.Instance();
           impresora.RecibirMensajes("No se pudo ver el historial");
         }
       }
@@ -113,7 +113,7 @@ namespace ClassLibrary
         }
         catch (Exception)
         {
-          ImpresoraConsola impresora = ImpresoraConsola.Instance();
+          Iimpresora impresora = ImpresoraConsola.Instance();
           impresora.RecibirMensajes("No se pudo ver el historial");
         }
       }
@@ -130,7 +130,7 @@ namespace ClassLibrary
         }
         catch (Exception)
         {
-          ImpresoraConsola impresora = ImpresoraConsola.Instance();
+          Iimpresora impresora = ImpresoraConsola.Instance();
           impresora.RecibirMensajes("No se pudo ver el tablero");
         }
       }
