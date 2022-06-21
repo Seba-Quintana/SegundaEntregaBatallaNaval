@@ -7,7 +7,7 @@ namespace Tests
     /// Test para un correcto funcionamiento de la clase Logica <see cref="Partida"/>
     /// </summary>
     [TestFixture]
-    public class TestDeLogica
+    public class TestDePartida
     {
         /// <summary>
         /// El tablero que va a ser utilizado para los tests.Es necesario ya que Logica solo
@@ -22,8 +22,6 @@ namespace Tests
         public void Setup()
         {
             this.partida = new Partida(9, 1, 2);
-            partida.AñadirBarco("a1", "a9", 1);
-            partida.AñadirBarco("b1", "b9", 1);
         }
         /// <summary>
         /// Test con el objetivo de ver si se añade correctamente los barcos horizontales al ser asignados al tablero
@@ -55,8 +53,8 @@ namespace Tests
             partida.AñadirBarco(inicioDelBarco ,finalDelBarco,1);
             char expected = 'B';
             char[ , ]tableroActualizado = partida.VerTableroPropio(1);
-            Assert.AreEqual(expected, tableroActualizado[4,7]);
-            Assert.AreEqual('\u0000', tableroActualizado[4,8]);
+            Assert.AreEqual(expected, tableroActualizado[4,5]);
+            Assert.AreEqual('\u0000', tableroActualizado[4,6]);
         }
         /// <summary>
         /// Test con el objetivo de ver si se añade correctamente los barcos verticales al ser asignados al tablero
@@ -96,14 +94,13 @@ namespace Tests
         [Test]
         public void AtaqueAlAgua()
         {
-            string LugarAAtacar = "B8";
-            partida.Atacar(LugarAAtacar, 1);
+            string LugarAAtacar = "A1";
+            int[] ataque = TraductorDeCoordenadas.Traducir(LugarAAtacar);
+            LogicaDeTablero.Atacar(partida.tableros[1], ataque[0], ataque[1]);
             char expected = 'W';
-            char[,] tablero = partida.VerTableroPropio(2);
+            Tablero tablero = partida.tableros[1];
             //char[,] charAct = tablero.VerCasilla(1, 7);
-            Iimpresora a = ImpresoraConsola.Instance();
-            a.ImprimirTablero(tablero, false);
-            Assert.AreEqual(expected, tablero[11,7]);
+            Assert.AreEqual(expected, tablero.VerCasilla(0,0));
         }
         /// <summary>
         /// Se ataca un punto del barco para ver que este cambie por 'T'.
@@ -113,12 +110,13 @@ namespace Tests
         {
             string inicioDelBarco = "B8";
             string finalDelBarco = "F8";
-            partida.AñadirBarco(inicioDelBarco ,finalDelBarco,1);
+            partida.AñadirBarco(inicioDelBarco ,finalDelBarco,2);
             string LugarAAtacar = "F8";
-            partida.Atacar(LugarAAtacar,2);
+            int[] ataque = TraductorDeCoordenadas.Traducir(LugarAAtacar);
+            LogicaDeTablero.Atacar(partida.tableros[1], ataque[0], ataque[1]);
             char expected = 'T';
-            char[ , ]tableroActualizado = partida.VerTableroPropio(1);
-            Assert.AreEqual(expected, tableroActualizado[5,7]);
+            Tablero tablero = partida.tableros[1];
+            Assert.AreEqual(expected, tablero.VerCasilla(5,7));
         }
         /// <summary>
         /// Se ataca 2 veces el mismo punto del barco para ver que este se mantega siendo 'T'.
@@ -128,13 +126,14 @@ namespace Tests
         {
             string inicioDelBarco = "B8";
             string finalDelBarco = "F8";
-            partida.AñadirBarco(inicioDelBarco ,finalDelBarco,1);
+            partida.AñadirBarco(inicioDelBarco ,finalDelBarco,2);
             string LugarAAtacar = "F8";
-            partida.Atacar(LugarAAtacar, 2);
-            partida.Atacar(LugarAAtacar, 2);
+            int[] ataque = TraductorDeCoordenadas.Traducir(LugarAAtacar);
+            LogicaDeTablero.Atacar(partida.tableros[1], ataque[0], ataque[1]);
+            LogicaDeTablero.Atacar(partida.tableros[1], ataque[0], ataque[1]);
             char expected = 'T';
-            char[ , ]tableroActualizado = partida.VerTableroPropio(1);
-            Assert.AreEqual(expected, tableroActualizado[5,7]);
+            Tablero tablero = partida.tableros[1];
+            Assert.AreEqual(expected, tablero.VerCasilla(5,7));
         }
         /// <summary>
         /// Se ataca un punto del barco para ver que este cambie por 'T'.
@@ -144,12 +143,13 @@ namespace Tests
         {
             string inicioDelBarco = "H4";
             string finalDelBarco = "H8";
-            partida.AñadirBarco(inicioDelBarco ,finalDelBarco,1);
+            partida.AñadirBarco(inicioDelBarco ,finalDelBarco,2);
             string LugarAAtacar = "H5";
-            partida.Atacar(LugarAAtacar,2);
+            int[] ataque = TraductorDeCoordenadas.Traducir(LugarAAtacar);
+            LogicaDeTablero.Atacar(partida.tableros[1], ataque[0], ataque[1]);
             char expected = 'T';
-            char[ , ]tableroActualizado = partida.VerTableroPropio(1);
-            Assert.AreEqual(expected, tableroActualizado[7,4]);
+            Tablero tablero = partida.tableros[1];
+            Assert.AreEqual(expected, tablero.VerCasilla(7,4));
         }
          /// <summary>
         /// Se ataca 2 veces el mismo punto del barco para ver que este se mantega siendo 'T'.
@@ -159,13 +159,16 @@ namespace Tests
         {
             string inicioDelBarco = "H4";
             string finalDelBarco = "H8";
-            partida.AñadirBarco(inicioDelBarco ,finalDelBarco,1);
+            partida.AñadirBarco(inicioDelBarco ,finalDelBarco,2);
             string LugarAAtacar = "H6";
             partida.Atacar(LugarAAtacar, 2);
             partida.Atacar(LugarAAtacar, 2);
+            int[] ataque = TraductorDeCoordenadas.Traducir(LugarAAtacar);
+            LogicaDeTablero.Atacar(partida.tableros[1], ataque[0], ataque[1]);
+            LogicaDeTablero.Atacar(partida.tableros[1], ataque[0], ataque[1]);
             char expected = 'T';
-            char[ , ]tableroActualizado = partida.VerTableroPropio(1);
-            Assert.AreEqual(expected, tableroActualizado[7,5]);
+            Tablero tablero = partida.tableros[1];
+            Assert.AreEqual(expected, tablero.VerCasilla(7,5));
         }
     }
 }
