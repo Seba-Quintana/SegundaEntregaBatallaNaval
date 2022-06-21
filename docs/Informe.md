@@ -45,8 +45,8 @@ Clases:
 - Jugador:
 Un jugador es una representación de las acciones posibles que puede tomar un usuario, y a su vez es el punto de contacto entre el código y las decisiones del jugador. Los distintos métodos sirven para realizar las acciones que quiere realizar el jugador, y van desde visualizar datos, posicionar y atacar barcos, hasta rendirse y remover sus datos del sistema. Al construir un jugador automáticamente se agrega al almacenamiento de los usuarios, por lo que necesita registrarse para acceder.
 
-- Admin: 
-La clase Admin es la que obtiene los datos que las otras clases precisan, y delega tareas a otras clases.
+- Planificador: 
+La clase Planificador es la que obtiene los datos que las otras clases precisan, y delega tareas a otras clases.
 Esta clase es estática porque como su única responsabilidad es delegar tareas, no necesita almacenar información, y utiliza SRP por la misma razón.
 También implementa el patrón Facade, ya que provee acceso a las distintas partes de la funcionalidad del sistema, y sabe a donde redirigir el pedido del cliente. Gracias a esto también evita que el jugador tenga que llamar al subsistema directamente.
 

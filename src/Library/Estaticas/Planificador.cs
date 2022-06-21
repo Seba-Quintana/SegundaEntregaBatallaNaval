@@ -4,11 +4,10 @@ using System.Collections.Generic;
 namespace ClassLibrary
 {
     /// <summary>
-    /// Clase administradora. Se encarga de manejar distintos aspectos del programa,
+    /// Clase Planificador. Se encarga de manejar distintos aspectos del programa,
     /// como los usuarios o el historial.
-    /// Sera cambiada en gran parte por los handlers.
     /// </summary>
-    public static class Admin
+    public static class Planificador
     {
         /// <summary>
         /// Crea un nuevo perfil de usuario asignandole un numero de jugador.
@@ -30,7 +29,7 @@ namespace ClassLibrary
 
         /// <summary>
         /// Si el numero de usuarios pertenece a un PerfilUsuario existente
-        /// en la lista de perfiles de admin, lo elimina de la misma.
+        /// en la lista de perfiles de Planificador, lo elimina de la misma.
         /// </summary>
         /// <param name="NumeroDeJugador"> numero del jugador a remover</param>
         public static string Remover(int NumeroDeJugador)
@@ -100,7 +99,7 @@ namespace ClassLibrary
 
         /// <summary>
         /// Si el numero ingresado es 0 pide mostrar el historial general de todos las partidas jugadas,
-        /// si el numero pertenece a un PerfilUsuario en la lista de perfiles de Admin
+        /// si el numero pertenece a un PerfilUsuario en la lista de perfiles de Planificador
         /// pide mostrar el HistorialPersonal de este perfil.
         /// </summary>
         public static void VerHistorial()
@@ -113,7 +112,7 @@ namespace ClassLibrary
 
         /// <summary>
         /// Si el numero ingresado es 0 pide mostrar el historial general de todos las partidas jugadas,
-        /// si el numero pertenece a un PerfilUsuario en la lista de perfiles de Admin
+        /// si el numero pertenece a un PerfilUsuario en la lista de perfiles de Planificador
         /// pide mostrar el HistorialPersonal de este perfil.
         /// </summary>
         /// <param name="numerodejugador"> historial que se quiere ver</param>
